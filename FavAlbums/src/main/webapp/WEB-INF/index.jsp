@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Boot Favorite Albums</title>
+<title>Favorite Albums</title>
 <jsp:include page="bootstrapHead.jsp"/>
 </head>
 <body>
@@ -14,7 +14,7 @@
 	<h1>Favorite Albums</h1>
 
 	<form action="getAlbum.do" method="GET">
-		Film ID: <input class="form" type="text" name="aid" /> <input class="btn btn-dark" type="submit"
+		Album ID: <input class="form" type="text" name="aid" /> <input class="btn btn-dark" type="submit"
 			value="Show Album" />
 	</form>
 
