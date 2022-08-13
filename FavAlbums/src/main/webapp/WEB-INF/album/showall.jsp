@@ -17,7 +17,7 @@
 <table class="table table-striped">
 		<thead class="table thead-dark">
 			<tr>
-				<th>No.</th>
+				<th>ID</th>
 				<th>Band</th>
 				<th>Album</th>
 			</tr>

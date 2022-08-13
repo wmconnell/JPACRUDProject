@@ -18,7 +18,7 @@ public class AlbumDAOImpl implements AlbumDAO {
 	private EntityManager em;
 	
 	@Override
-	public Album findById(int id) {
+	public Album findById(Integer id) {
 		return em.find(Album.class, id);
 	}
 
@@ -42,5 +42,22 @@ public class AlbumDAOImpl implements AlbumDAO {
 		Album album = em.find(Album.class, id);
 		
 		em.remove(album);
+	}
+
+	@Override
+	public Album updateAlbum(int id, Album album) {
+		Album updatedAlbum = em.find(Album.class, id);
+		
+		updatedAlbum.setName(album.getName());
+		updatedAlbum.setBand(album.getBand());
+		updatedAlbum.setLength(album.getLength());
+		updatedAlbum.setGenre(album.getGenre());
+		updatedAlbum.setReleaseYear(album.getReleaseYear());
+		updatedAlbum.setNumberOfSongs(album.getNumberOfSongs());
+		updatedAlbum.setFavoriteSong(album.getFavoriteSong());
+		
+		em.persist(updatedAlbum);
+		return updatedAlbum;
+		
 	}
 }

@@ -13,7 +13,7 @@
 <h3>New Album</h3>
 <h5> Album Details</h5>
 <div>
-
+	To create an album, fill out at least the "Album Name" and "Band Name" forms
 	<form action="addNewAlbum.do" method="POST">
 		<label for="name">Album Name:</label>
 			<input class="form" type="text" name="name" required/> <br>
