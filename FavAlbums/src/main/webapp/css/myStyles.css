@@ -18,3 +18,9 @@ a:hover {
 	color: darkgrey;
 	text-decoration: none;
 }
+
+.prefilledForm {
+	
+	color: rgba(0, 0, 0, 0.5);
+	
+}

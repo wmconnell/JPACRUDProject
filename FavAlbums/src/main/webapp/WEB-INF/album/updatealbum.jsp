@@ -12,7 +12,7 @@
 <jsp:include page="../navbar.jsp"/>
 <h3>Update Album</h3>
 <h5> Album Details</h5>
-<div>
+
 
 
 
@@ -22,6 +22,7 @@
 		<label for="id">Album ID:</label>${album.id}
 		<input type="hidden" name="id" value="${album.id}"/>
 			 <br>
+			 <div class="prefilledForm">
 		<label for="name">Album Name:</label>
 			<input type="text" name="name" value="${album.name}"/> <br>
 		<label for="band">Band Name:</label>
@@ -36,10 +37,10 @@
 			<input type="number" name="numberOfSongs" value="${album.numberOfSongs}"/> <br>
 		<label for="favoriteSong">Favorite Song:</label>
 			<input type="text" name="favoriteSong" value="${album.favoriteSong}"/> <br>
-	
+	</div>
 		<input class="btn btn-dark" type="submit" value="Update Album" />
 	</form>
-</div>
+
 
 </main>
 <jsp:include page="../bootstrapFoot.jsp"/>
