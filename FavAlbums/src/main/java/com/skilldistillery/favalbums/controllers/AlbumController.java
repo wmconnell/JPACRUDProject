@@ -19,12 +19,24 @@ public class AlbumController {
 	@Autowired
 	private AlbumDAO albumDao;
 
-	@RequestMapping(path = { "/", "index.do" }, method = RequestMethod.GET)
-	public String index(Model model) {
+//	@RequestMapping(path = { "/", "index.do" }, method = RequestMethod.GET)
+//	public String index(Model model) {
+//		
+//		return "index";
+//	}
 
-		return "index";
+	@RequestMapping(path = { "/", "index.do" })
+	public ModelAndView otherIndex(Model model) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("index");
+		List<Album> albums = albumDao.findAll();
+		System.out.println(albums);
+		mv.addObject("albums", albums);
+		return mv;
 	}
-
+	
+	
+	
 	@RequestMapping(path = "getAlbum.do")
 	public String getFilm(Integer aid, Model model) {
 		Album album = albumDao.findById(aid);
@@ -48,7 +60,7 @@ public class AlbumController {
 	public String addNewAlbum(Album album, Model model) {
 		model.addAttribute("album", album);
 		album = albumDao.addNewAlbum(album);
-		return "index";
+		return "album/albumadded";
 	}
 	
 	@RequestMapping(path = "goToDeleteAlbum.do", method = RequestMethod.GET)
@@ -59,7 +71,7 @@ public class AlbumController {
 	@RequestMapping(path = "deleteAlbum.do", method = RequestMethod.POST)
 	public String deleteAlbum(Integer id) {
 		albumDao.deleteAlbum(id);
-		return "index";
+		return "album/albumdeleted";
 	}
 	
 	@RequestMapping(path= "selectAlbumToUpdate.do")
@@ -84,6 +96,6 @@ public class AlbumController {
 		System.out.println(id);
 		model.addAttribute("album", album);
 		album = albumDao.updateAlbum(id, album);
-		return "index";
+		return "album/albumupdated";
 	}
 }

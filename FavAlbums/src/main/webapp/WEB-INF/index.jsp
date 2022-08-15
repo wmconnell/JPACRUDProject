@@ -11,16 +11,19 @@
 <body>
 <main class="container-fluid">
 <jsp:include page="navbar.jsp"/>
-	<h1>Favorite Albums</h1>
+	<h1>Album Collection</h1>
+	
+	<h2>Welcome to your album collection!</h2>
+	
+	<h4>Select an album cover below to see album details, or choose an option from the navigation bar above</h4>
 	
 
-	<form action="getAlbum.do" method="GET">
-		Album ID: <input class="form" type="text" name="aid" /> <input class="btn btn-dark" type="submit"
-			value="Show Album" />
-	</form>
-
-<c:forEach items="${album }" var="album">
-	<p>${album.albumCoverUrl}</p><br/>
+<c:forEach items="${albums}" var="album">
+	<c:choose>
+	<c:when test="${not empty album.albumCoverUrl}">
+	<a href="/getAlbum.do?aid=${album.id}"><img src="${album.albumCoverUrl}" width="150" height="150"/></a>
+	</c:when>
+	</c:choose>
 	</c:forEach>
 
 

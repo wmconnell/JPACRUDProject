@@ -21,13 +21,24 @@
 
 <div>
 	<h2>Band: ${album.band}</h2>
+	<h5>ID: ${album.id}</h5>
   <h5>Album: ${album.name}</h5>
   <h5>Length: ${album.length} mins</h5>
   <h5>Genre: ${album.genre}</h5>
   <h5>Year: ${album.releaseYear}</h5>
   <h5>Number of Songs: ${album.numberOfSongs}</h5>
   <h5>Favorite Song: ${album.favoriteSong}</h5>
+  
+  <c:choose>
+  <c:when test="${not empty album.albumCoverUrl }">
   <a href="${album.albumCoverUrl}"><img src="${album.albumCoverUrl}" alt="Album Cover" width="200" height="200"/></a>
+  </c:when>
+  <c:otherwise>
+  <br>
+  <br>
+  <p>**No album cover available**</p>
+  </c:otherwise>
+  </c:choose>
 </div>
 
 </c:otherwise>
