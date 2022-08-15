@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,13 +14,14 @@
 <h3>Update Album</h3>
 <h5> Album Details</h5>
 
+<c:choose>
+<c:when test="${empty album}">
+	<h3><strong>Please select update album again and input a valid ID</strong></h3>
+</c:when>
+<c:otherwise>
 
-
-
-
-	Fill out any information you would like to update
 	<form action="updateAlbum.do" method="POST">
-		<label for="id">Album ID:</label>${album.id}
+		<label for="id"><strong>Album ID: </strong></label>${album.id}
 		<input type="hidden" name="id" value="${album.id}"/>
 			 <br>
 			 <div class="prefilledForm">
@@ -37,10 +39,19 @@
 			<input type="number" name="numberOfSongs" value="${album.numberOfSongs}"/> <br>
 		<label for="favoriteSong">Favorite Song:</label>
 			<input type="text" name="favoriteSong" value="${album.favoriteSong}"/> <br>
+		<label for="albumCoverUrl">Album Cover: (URL)</label>
+			<input type="text" name="albumCoverUrl" value="${album.albumCoverUrl}"/> <br>
 	</div>
 		<input class="btn btn-dark" type="submit" value="Update Album" />
+		
 	</form>
-
+	<form action="deleteAlbum.do" method="POST">
+	<input type="hidden" name="id" value="${album.id}"/>
+		<input class="btn btn-dark" type="submit" value="Delete Album" />
+	</form>
+	
+</c:otherwise>
+</c:choose>
 
 </main>
 <jsp:include page="../bootstrapFoot.jsp"/>

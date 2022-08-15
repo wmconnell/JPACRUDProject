@@ -13,10 +13,7 @@
   	<a class="nav-link" href="goToAddNewAlbum.do">Add New Album</a>
   	</li>
   <li class="nav-item">
-  	<a class="nav-link" href="goToDeleteAlbum.do">Delete Album</a>
-  	</li>
-  <li class="nav-item">
-  	<a class="nav-link" href="selectAlbumToUpdate.do">Update Album</a>
+  	<a class="nav-link" href="selectAlbumToUpdate.do">Update/Delete Album</a>
   	</li>
 </ul>
 

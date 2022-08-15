@@ -46,5 +46,9 @@ class AlbumTest {
 		assertNotNull(album);
 		assertEquals("...And Justice for All", album.getName());
 	}
+	
+	
 
+	
+	
 }

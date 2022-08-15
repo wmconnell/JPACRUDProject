@@ -29,7 +29,8 @@
 			<input class="form" type="number" name="numberOfSongs" /> <br>
 		<label for="favoriteSong">Favorite Song:</label>
 			<input class="form" type="text" name="favoriteSong" /> <br>
-	
+		<label for="favoriteSong">Album Cover: (URL)</label>
+			<input class="form" type="text" name="albumCoverUrl" /> <br>
 		<input class="btn btn-dark" type="submit" value="Add Album" />
 	</form>
 </div>

@@ -12,12 +12,16 @@
 <main class="container-fluid">
 <jsp:include page="navbar.jsp"/>
 	<h1>Favorite Albums</h1>
+	
 
 	<form action="getAlbum.do" method="GET">
 		Album ID: <input class="form" type="text" name="aid" /> <input class="btn btn-dark" type="submit"
 			value="Show Album" />
 	</form>
 
+<c:forEach items="${album }" var="album">
+	<p>${album.albumCoverUrl}</p><br/>
+	</c:forEach>
 
 
 </main>

@@ -55,6 +55,7 @@ public class AlbumDAOImpl implements AlbumDAO {
 		updatedAlbum.setReleaseYear(album.getReleaseYear());
 		updatedAlbum.setNumberOfSongs(album.getNumberOfSongs());
 		updatedAlbum.setFavoriteSong(album.getFavoriteSong());
+		updatedAlbum.setAlbumCoverUrl(album.getAlbumCoverUrl());
 		
 		em.persist(updatedAlbum);
 		return updatedAlbum;
